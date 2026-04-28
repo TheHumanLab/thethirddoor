@@ -1,31 +1,35 @@
-<!-- THE THIRD DOOR — ACCESS MODULE -->
+<!-- THE THIRD DOOR — MULTI-STEP ACCESS MODULE -->
 <section class="access-section">
 
   <div class="access-container">
-    
-    <form action="https://formspree.io/f/mvzdjqvv" method="POST">
 
-      <!-- QUESTION (FILTER) -->
-      <input 
-        type="text" 
-        name="intent" 
-        placeholder="What are you no longer willing to continue?" 
-        required
-      />
+    <form id="accessForm" action="https://formspree.io/f/mvzdjqvv" method="POST">
 
-      <!-- EMAIL -->
-      <input 
-        type="email" 
-        name="email" 
-        placeholder="Enter your email" 
-        required
-      />
+      <!-- STEP 1 -->
+      <div id="step1">
+        <input 
+          type="text" 
+          name="intent" 
+          placeholder="What are you no longer willing to continue?" 
+          required
+        />
 
-      <!-- REDIRECT (MUST BE INSIDE FORM) -->
-      <input type="hidden" name="_redirect" value="https://thehumanlab.github.io/thethirddoor/thank-you.html">
+        <button type="button" onclick="goToStep2()">Continue</button>
+      </div>
 
-      <!-- SUBMIT -->
-      <button type="submit">Request Access</button>
+      <!-- STEP 2 -->
+      <div id="step2" style="display:none;">
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="Enter your email" 
+          required
+        />
+
+        <input type="hidden" name="_redirect" value="https://thehumanlab.github.io/thethirddoor/thank-you.html">
+
+        <button type="submit">Request Access</button>
+      </div>
 
     </form>
 
@@ -38,8 +42,6 @@
 </section>
 
 <style>
-/* THE THIRD DOOR — ACCESS MODULE */
-
 .access-section {
   width: 100%;
   display: flex;
@@ -63,22 +65,24 @@
 .access-container input {
   padding: 14px 16px;
   width: 100%;
-  border: 1px solid rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.2);
   background: transparent;
+  color: #fff;
   font-size: 14px;
   outline: none;
   letter-spacing: 0.5px;
 }
 
 .access-container input::placeholder {
-  opacity: 0.5;
+  opacity: 0.4;
+  color: #aaa;
 }
 
 .access-container button {
   padding: 14px 22px;
   border: none;
-  background: black;
-  color: white;
+  background: white;
+  color: black;
   cursor: pointer;
   letter-spacing: 1px;
   transition: opacity 0.2s ease;
@@ -92,7 +96,21 @@
 .access-note {
   margin-top: 12px;
   font-size: 12px;
-  opacity: 0.6;
-  letter-spacing: 0.5px;
+  opacity: 0.5;
+  color: #ccc;
 }
 </style>
+
+<script>
+function goToStep2() {
+  const input = document.querySelector('input[name="intent"]');
+  
+  if (input.value.trim() === "") {
+    input.focus();
+    return;
+  }
+
+  document.getElementById("step1").style.display = "none";
+  document.getElementById("step2").style.display = "block";
+}
+</script>
