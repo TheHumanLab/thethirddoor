@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE THIRD DOOR — ACCESS</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      background: #000000;
+      color: #F5F5F5;
+      font-family: 'Courier Prime', monospace;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    
+    .gate {
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .coin {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
+    }
+    
+    h1 {
+      font-size: 18px;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+    
+    .sub {
+      font-size: 12px;
+      opacity: 0.6;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+    }
+    
+    .warning {
+      font-size: 11px;
+      opacity: 0.5;
+      margin-bottom: 50px;
+      line-height: 1.6;
+    }
+    
+    form {
+      text-align: left;
+    }
+    
+    label {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      opacity: 0.8;
+    }
+    
+    input[type="text"], textarea {
+      width: 100%;
+      background: #0A0A0A;
+      border: 1px solid #222;
+      color: #F5F5F5;
+      padding: 12px;
+      font-family: 'Courier Prime', monospace;
+      font-size: 14px;
+      margin-bottom: 30px;
+      resize: none;
+    }
+    
+    input[type="text"]:focus, textarea:focus {
+      outline: none;
+      border-color: #444;
+    }
+    
+    .code-block {
+      border: 1px solid #222;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .code-block p {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      opacity: 0.8;
+    }
+    
+    .checkbox {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    
+    .checkbox input {
+      margin-right: 10px;
+      margin-top: 2px;
+      accent-color: #F5F5F5;
+    }
+    
+    button {
+      width: 100%;
+      background: #F5F5F5;
+      color: #000;
+      border: none;
+      padding: 16px;
+      font-family: 'Courier Prime', monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    
+    button:hover {
+      background: #FFF;
+    }
+    
+    .footer {
+      margin-top: 60px;
+      font-size: 16px;
+      opacity: 0.3;
+    }
+  </style>
+</head>
+<body>
+  <div class="gate">
+    <!-- Replace src with your actual coin image URL -->
+    <img src="YOUR_COIN_IMAGE_URL.png" alt="THE THIRD DOOR" class="coin">
+    
+    <h1>THE THIRD DOOR</h1>
+    <p class="sub">7 DAYS. 3 SEATS. NO EXIT.</p>
+    
+    <p class="warning">
+      If you need to ask what happens inside,<br>
+      this gate is not for you.
+    </p>
+    
+    <form action="https://formspree.io/f/mvzdjqvv" method="POST">
+      
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="bury">What are you here to bury?</label>
+      <textarea id="bury" name="bury" rows="3" maxlength="200" required></textarea>
+      
+      <div class="code-block">
+        <p>You understand the code?</p>
+        
+        <label class="checkbox">
+          <input type="checkbox" name="code[]" value="I. 3 SEATS ONLY" required>
+          I. 3 SEATS ONLY
+        </label>
+        
+        <label class="checkbox">
+          <input type="checkbox" name="code[]" value="II. NO DEVICES" required>
+          II. NO DEVICES
+        </label>
+        
+        <label class="checkbox">
+          <input type="checkbox" name="code[]" value="III. NO SPECTATORS" required>
+          III. NO SPECTATORS
+        </label>
+        
+        <label class="checkbox">
+          <input type="checkbox" name="code[]" value="IV. NO SEDUCTION" required>
+          IV. NO SEDUCTION
+        </label>
+        
+        <label class="checkbox">
+          <input type="checkbox" name="code[]" value="This is operational. Not recreational." required>
+          This is operational. Not recreational.
+        </label>
+        
+        <label class="checkbox">
+          <input type="checkbox" name="code[]" value="Breach = removal. No refund." required>
+          Breach = removal. No refund.
+        </label>
+      </div>
+      
+      <!-- Hidden field to ID submissions -->
+      <input type="hidden" name="_subject" value="THIRD DOOR — ACCESS REQUEST">
+      
+      <!-- Redirect after submit -->
+      <input type="hidden" name="_next" value="https://yourdomain.com/closed">
+      
+      <button type="submit">REQUEST ACCESS</button>
+    </form>
+    
+    <div class="footer">III</div>
+  </div>
+</body>
+</html>
