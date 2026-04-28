@@ -3,10 +3,10 @@
 
   <div class="access-container">
 
-    <!-- COIN (ANCHOR ABOVE FORM) -->
+    <!-- COIN -->
     <img src="coin.png" alt="III" class="coin-mark">
 
-    <form id="accessForm" action="https://formspree.io/f/mvzdjqvv" method="POST">
+    <form id="accessForm" action="https://formspree.io/f/mvzdjqvv" method="POST" target="hidden_iframe" onsubmit="handleSubmit()">
 
       <!-- STEP 1 -->
       <div id="step1" class="step active">
@@ -27,13 +27,13 @@
           placeholder="Enter your email" 
           required
         />
-
-        <input type="hidden" name="_redirect" value="https://thehumanlab.github.io/thethirddoor/thank-you.html">
-
         <button type="submit">Request Access</button>
       </div>
-<input type="hidden" name="_redirect" value="https://thehumanlab.github.io/thethirddoor/thank-you.html">
+
     </form>
+
+    <!-- HIDDEN IFRAME (prevents Formspree page) -->
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
 
     <p class="access-note">
       You’ll be contacted if selected.
@@ -68,7 +68,7 @@ body {
   width: 100%;
 }
 
-/* COIN (CONTROLLED, NOT BACKGROUND) */
+/* COIN */
 .coin-mark {
   width: 70px;
   margin-bottom: 30px;
@@ -151,5 +151,11 @@ function goToStep2() {
 
   step1.classList.remove("active");
   step2.classList.add("active");
+}
+
+function handleSubmit() {
+  setTimeout(function() {
+    window.location.href = "https://thehumanlab.github.io/thethirddoor/thank-you.html";
+  }, 300);
 }
 </script>
