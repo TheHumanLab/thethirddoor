@@ -67,7 +67,7 @@ p {
   margin: 6px 0;
 }
 
-/* STRONGER LINES */
+/* STRONG */
 .strong {
   opacity: 0.9;
 }
@@ -138,49 +138,86 @@ button:hover {
 
   <h1>7 DAYS. 3 SEATS. NO SPECTATORS.</h1>
 
-<div class="divider"></div>
+  <div class="divider"></div>
 
-<div class="location">DURBAN, SOUTH AFRICA</div>
+  <div class="location">DURBAN, SOUTH AFRICA</div>
 
-<p class="strong">This is not a retreat.</p>
-<p>This is a structured, controlled environment.</p>
+  <p class="strong">This is not a retreat.</p>
+  <p>This is a structured, controlled environment.</p>
 
-<div class="divider"></div>
+  <div class="divider"></div>
 
-<p class="strong">Structure</p>
+  <!-- RECOGNITION LAYER -->
+  <p>You’ve handled a lot quietly.</p>
+  <p>More than most people around you realise.</p>
 
-<p>3 men. 7 days. No devices.</p>
-<p>Daily controlled sessions.</p>
-<p>Private environment. Fully hosted.</p>
-<p>Security and medical support in place.</p>
+  <p>You’ve kept it moving.</p>
+  <p>You’ve held it together.</p>
 
-<div class="space"></div>
+  <p>But something underneath hasn’t shifted.</p>
 
-<p class="strong">Outcome</p>
+  <div class="space"></div>
 
-<p>One pattern identified.</p>
-<p>One thing ended.</p>
-<p>One structure to execute immediately.</p>
+  <p>It shows in how you think, react, carry pressure.</p>
 
-<div class="space"></div>
-  <p class="strong">It didn’t hold.</p>
+  <div class="space"></div>
+
+  <p>You’ve tried to manage it.</p>
+  <p>You’ve tried to outwork it.</p>
+  <p>You’ve tried to move past it.</p>
+
+  <div class="space"></div>
+
+  <p class="strong">It didn’t hold for long.</p>
+
+  <div class="divider"></div>
 
   <p>
     Because you were still inside the environment<br>
-    that created the pattern.
+    that shaped it.
   </p>
 
   <div class="divider"></div>
 
-  <p>This removes you from it — long enough to see it clearly.</p>
+  <p>
+    This removes you from it — long enough to see it clearly,<br>
+    and change it properly.
+  </p>
+
+  <div class="divider"></div>
+
+  <!-- TRUST + CONTAINMENT -->
+  <p class="strong">Structure</p>
+
+  <p>3 men. 7 days. No devices.</p>
+  <p>Daily controlled sessions.</p>
+  <p>You are not left to figure this out alone.</p>
+  <p>Private, secure environment. Fully hosted.</p>
+  <p>Medical and security support in place.</p>
+
+  <div class="space"></div>
+
+  <p class="strong">Outcome</p>
+
+  <p>One pattern identified.</p>
+  <p>One thing ended.</p>
+  <p>One structure to execute immediately.</p>
+
+  <div class="divider"></div>
+
+  <!-- AUTHORITY + POSITIONING -->
+  <p>This is not insight.</p>
+  <p>This is enforced clarity and action.</p>
 
   <div class="divider"></div>
 
   <p>You may leave at any time.</p>
-  <p>The process does not pause or adjust around you.</p>
+  <p>The process continues without you.</p>
 
   <div class="divider"></div>
-<p>This container is built for men.</p>
+
+  <p>This container is built for men.</p>
+
   <div class="final">
     ACCESS IS LIMITED<br>
     SELECTION IS DELIBERATE
@@ -191,13 +228,16 @@ button:hover {
 
     <form action="https://formspree.io/f/mvzdjqvv" method="POST" target="hidden_iframe" onsubmit="handleSubmit()">
 
-      <!-- STEP 1 -->
       <div id="step1">
-        <input type="text" name="intent" placeholder="What are you no longer willing to continue?" required>
+        <input 
+          type="text" 
+          name="intent" 
+          placeholder="What specifically needs to end in your life right now?" 
+          maxlength="120"
+          required>
         <button type="button" onclick="next()">Continue</button>
       </div>
 
-      <!-- STEP 2 -->
       <div id="step2" style="display:none;">
         <input type="email" name="email" placeholder="Enter your email" required>
         <button type="submit">Request Access</button>
