@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>THE THIRD DOOR</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 
 /* BASE */
@@ -12,153 +14,117 @@ body {
   margin: 0;
   padding: 0;
   background: #000;
-  color: #fff;
-  font-family: Arial, sans-serif;
+  color: #eaeaea;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
 }
 
-/* HERO */
-.hero {
+/* MAIN COLUMN */
+.wrapper {
+  max-width: 520px;
+  width: 100%;
+  padding: 100px 20px 140px;
   text-align: center;
-  max-width: 640px;
-  margin: 140px auto 80px auto;
-  padding: 0 20px;
-  position: relative;
 }
 
-/* HEADLINE (smaller, tighter) */
-.hero h1 {
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: 1.2px;
-  margin-bottom: 12px;
+/* COIN */
+.coin {
+  width: 100px;
+  margin: 0 auto 40px;
+  opacity: 0.85;
+}
+
+/* TITLE */
+h1 {
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-weight: 400;
+  margin-bottom: 18px;
+}
+
+/* DIVIDER */
+.divider {
+  width: 40px;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+  margin: 24px auto;
 }
 
 /* LOCATION */
 .location {
-  font-size: 13px;
-  opacity: 0.45;
-  margin-bottom: 28px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.5;
+  margin-bottom: 20px;
 }
 
-/* BODY TEXT */
-.hero p {
+/* TEXT */
+p {
   font-size: 14px;
-  margin: 6px 0;
-  opacity: 0.7;
   line-height: 1.6;
+  opacity: 0.7;
+  margin: 6px 0;
 }
 
-/* EMPHASIS LINES */
-.line {
-  opacity: 0.85;
-}
-
-/* SPACING */
-.spacer {
-  height: 26px;
-}
-
-/* FINAL LINES */
-.final {
-  margin-top: 30px;
-  font-weight: 500;
+/* STRONGER LINES */
+.strong {
   opacity: 0.9;
 }
 
-/* DEPTH OVERLAY (subtle vignette) */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.6) 100%);
-  pointer-events: none;
-  z-index: 0;
+/* SPACING */
+.space {
+  height: 26px;
 }
 
-/* ENSURE CONTENT ABOVE */
-.hero, .access-section {
-  position: relative;
-  z-index: 1;
+/* FINAL */
+.final {
+  margin-top: 30px;
+  letter-spacing: 2px;
+  font-size: 12px;
+  opacity: 0.85;
 }
 
-/* ACCESS */
-.access-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 120px;
-}
-
-.access-container {
-  text-align: center;
-  max-width: 420px;
-  width: 100%;
-}
-
-/* COIN */
-.coin-mark {
-  width: 90px;            /* was 70px */
-  margin-bottom: 34px;    /* slightly more space to breathe */
-  opacity: 0.78;
-  filter: contrast(1.1) brightness(0.95);
-}
 /* FORM */
-.access-container form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  align-items: center;
+.form {
+  margin-top: 60px;
 }
 
-/* STEPS */
-.step {
+input {
   width: 100%;
-  display: none;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.step.active {
-  display: flex;
-}
-
-/* INPUT */
-.access-container input {
-  padding: 16px;
-  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.2);
   color: #fff;
-  font-size: 14px;
+  font-size: 13px;
   outline: none;
-  letter-spacing: 0.5px;
 }
 
-.access-container input::placeholder {
-  color: rgba(255,255,255,0.4);
+input::placeholder {
+  color: rgba(255,255,255,0.35);
 }
 
 /* BUTTON */
-.access-container button {
-  padding: 16px;
+button {
   width: 100%;
+  padding: 14px;
   background: #fff;
   color: #000;
   border: none;
-  cursor: pointer;
   letter-spacing: 1px;
-  transition: opacity 0.2s ease;
+  cursor: pointer;
 }
 
-.access-container button:hover {
-  opacity: 0.8;
+button:hover {
+  opacity: 0.85;
 }
 
 /* NOTE */
-.access-note {
+.note {
   margin-top: 14px;
-  font-size: 12px;
-  opacity: 0.5;
+  font-size: 11px;
+  opacity: 0.4;
 }
 
 </style>
@@ -166,79 +132,64 @@ body::after {
 
 <body>
 
-<!-- HERO -->
-<section class="hero">
+<div class="wrapper">
 
-  <h1>7 Days. 3 Seats. No Spectators.</h1>
+  <img src="coin.png" class="coin" alt="III">
 
-  <p class="location">Durban, South Africa</p>
+  <h1>7 DAYS. 3 SEATS. NO SPECTATORS.</h1>
 
-  <p class="line">This is not a retreat.</p>
-  <p class="line">This is a structured, controlled environment.</p>
+  <div class="divider"></div>
 
-  <div class="spacer"></div>
+  <div class="location">DURBAN, SOUTH AFRICA</div>
+
+  <p class="strong">This is not a retreat.</p>
+  <p>This is a structured, controlled environment.</p>
+
+  <div class="divider"></div>
 
   <p>You’ve tried therapy.</p>
   <p>You’ve tried retreats.</p>
   <p>You’ve tried control.</p>
 
-  <div class="spacer"></div>
+  <div class="space"></div>
 
-  <p>It didn’t hold.</p>
+  <p class="strong">It didn’t hold.</p>
 
   <p>
     Because you were still inside the environment<br>
     that created the pattern.
   </p>
 
-  <div class="spacer"></div>
+  <div class="divider"></div>
 
-  <p>
-    This removes you from it — long enough to see it clearly.
-  </p>
+  <p>This removes you from it — long enough to see it clearly.</p>
 
-  <div class="spacer"></div>
+  <div class="divider"></div>
 
-  <p>
-    You may leave at any time.<br>
-    The process does not pause or adjust around you.
-  </p>
+  <p>You may leave at any time.</p>
+  <p>The process does not pause or adjust around you.</p>
 
-  <div class="spacer"></div>
+  <div class="divider"></div>
 
-  <p class="final">
-    Access is limited.<br>
-    Selection is deliberate.
-  </p>
+  <div class="final">
+    ACCESS IS LIMITED<br>
+    SELECTION IS DELIBERATE
+  </div>
 
-</section>
+  <!-- FORM -->
+  <div class="form">
 
-<!-- ACCESS -->
-<section class="access-section">
+    <form action="https://formspree.io/f/mvzdjqvv" method="POST" target="hidden_iframe" onsubmit="handleSubmit()">
 
-  <div class="access-container">
-
-    <img src="coin.png" alt="III" class="coin-mark">
-
-    <form id="accessForm" action="https://formspree.io/f/mvzdjqvv" method="POST" target="hidden_iframe" onsubmit="handleSubmit()">
-
-      <div id="step1" class="step active">
-        <input 
-          type="text" 
-          name="intent" 
-          placeholder="What are you no longer willing to continue?" 
-          required
-        />
-        <button type="button" onclick="goToStep2()">Continue</button>
+      <!-- STEP 1 -->
+      <div id="step1">
+        <input type="text" name="intent" placeholder="What are you no longer willing to continue?" required>
+        <button type="button" onclick="next()">Continue</button>
       </div>
 
-      <div id="step2" class="step">
-        <input 
-          type="email" 
-          name="email" 
-          placeholder="Enter your email" 
-          required
-        />
+      <!-- STEP 2 -->
+      <div id="step2" style="display:none;">
+        <input type="email" name="email" placeholder="Enter your email" required>
         <button type="submit">Request Access</button>
       </div>
 
@@ -246,32 +197,24 @@ body::after {
 
     <iframe name="hidden_iframe" style="display:none;"></iframe>
 
-    <p class="access-note">
-      You’ll be contacted if selected.
-    </p>
+    <div class="note">You’ll be contacted if selected.</div>
 
   </div>
 
-</section>
+</div>
 
 <script>
 
-function goToStep2() {
+function next() {
   const input = document.querySelector('input[name="intent"]');
-  const step1 = document.getElementById("step1");
-  const step2 = document.getElementById("step2");
+  if (!input.value.trim()) return input.focus();
 
-  if (!input.value.trim()) {
-    input.focus();
-    return;
-  }
-
-  step1.classList.remove("active");
-  step2.classList.add("active");
+  document.getElementById("step1").style.display = "none";
+  document.getElementById("step2").style.display = "block";
 }
 
 function handleSubmit() {
-  setTimeout(function() {
+  setTimeout(() => {
     window.location.href = "https://thehumanlab.github.io/thethirddoor/thank-you.html";
   }, 300);
 }
