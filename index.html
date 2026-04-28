@@ -1,24 +1,26 @@
-<!-- THE THIRD DOOR — MULTI-STEP ACCESS MODULE -->
+<!-- THE THIRD DOOR — ACCESS MODULE -->
 <section class="access-section">
 
   <div class="access-container">
 
+    <!-- COIN (ANCHOR ABOVE FORM) -->
+    <img src="coin.png" alt="III" class="coin-mark">
+
     <form id="accessForm" action="https://formspree.io/f/mvzdjqvv" method="POST">
 
       <!-- STEP 1 -->
-      <div id="step1">
+      <div id="step1" class="step active">
         <input 
           type="text" 
           name="intent" 
           placeholder="What are you no longer willing to continue?" 
           required
         />
-
         <button type="button" onclick="goToStep2()">Continue</button>
       </div>
 
       <!-- STEP 2 -->
-      <div id="step2" style="display:none;">
+      <div id="step2" class="step">
         <input 
           type="email" 
           name="email" 
@@ -30,7 +32,7 @@
 
         <button type="submit">Request Access</button>
       </div>
-<img src="coin.png" alt="III" class="coin-mark">
+
     </form>
 
     <p class="access-note">
@@ -40,32 +42,18 @@
   </div>
 
 </section>
-.coin-mark {
-  width: 60px;
-  margin-bottom: 30px;
-  opacity: 0.7;
-  filter: contrast(1.1) brightness(0.95);
-}
+
 <style>
-/* FORCE DARK BASE */
-body {
-  background: #000 !important;
-  color: #fff !important;
-  margin: 0;
-}
+
+/* BASE */
 body {
   margin: 0;
   padding: 0;
   background: #000;
   color: #fff;
   font-family: Arial, sans-serif;
-
-  /* COIN AS BACKGROUND */
-  background-image: url('coin.png');
-  background-repeat: no-repeat;
-  background-position: center 65%;
-  background-size: 600px;
 }
+
 /* CONTAINER */
 .access-section {
   width: 100%;
@@ -80,7 +68,15 @@ body {
   width: 100%;
 }
 
-/* FORM LAYOUT */
+/* COIN (CONTROLLED, NOT BACKGROUND) */
+.coin-mark {
+  width: 70px;
+  margin-bottom: 30px;
+  opacity: 0.75;
+  filter: contrast(1.1) brightness(0.95);
+}
+
+/* FORM */
 .access-container form {
   display: flex;
   flex-direction: column;
@@ -88,23 +84,28 @@ body {
   align-items: center;
 }
 
-/* INPUT FIX (THIS SOLVES YOUR TYPING ISSUE) */
+/* STEP CONTROL */
+.step {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.step.active {
+  display: flex;
+}
+
+/* INPUT */
 .access-container input {
   padding: 16px;
   width: 100%;
-  background: transparent !important;
+  background: transparent;
   border: 1px solid rgba(255,255,255,0.25);
-  color: #ffffff !important;
+  color: #fff;
   font-size: 14px;
   outline: none;
   letter-spacing: 0.5px;
-  z-index: 10;
-  position: relative;
-}
-
-/* FORCE TEXT VISIBILITY */
-.access-container input:focus {
-  color: #ffffff !important;
 }
 
 /* PLACEHOLDER */
@@ -116,7 +117,7 @@ body {
 .access-container button {
   padding: 16px;
   width: 100%;
-  background: #ffffff;
+  background: #fff;
   color: #000;
   border: none;
   cursor: pointer;
@@ -134,18 +135,21 @@ body {
   font-size: 12px;
   opacity: 0.5;
 }
+
 </style>
 
 <script>
 function goToStep2() {
   const input = document.querySelector('input[name="intent"]');
+  const step1 = document.getElementById("step1");
+  const step2 = document.getElementById("step2");
 
   if (!input.value.trim()) {
     input.focus();
     return;
   }
 
-  document.getElementById("step1").style.display = "none";
-  document.getElementById("step2").style.display = "block";
+  step1.classList.remove("active");
+  step2.classList.add("active");
 }
 </script>
