@@ -42,11 +42,19 @@
 </section>
 
 <style>
+/* FORCE DARK BASE */
+body {
+  background: #000 !important;
+  color: #fff !important;
+  margin: 0;
+}
+
+/* CONTAINER */
 .access-section {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 80px;
+  margin-top: 120px;
 }
 
 .access-container {
@@ -55,67 +63,72 @@
   width: 100%;
 }
 
+/* FORM LAYOUT */
 .access-container form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   align-items: center;
 }
 
+/* INPUT FIX (THIS SOLVES YOUR TYPING ISSUE) */
 .access-container input {
-  padding: 14px 16px;
+  padding: 16px;
   width: 100%;
-  border: 1px solid rgba(255,255,255,0.2);
-  background: transparent;
-  color: #fff;
+  background: transparent !important;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #ffffff !important;
   font-size: 14px;
   outline: none;
   letter-spacing: 0.5px;
+  z-index: 10;
+  position: relative;
 }
 
+/* FORCE TEXT VISIBILITY */
+.access-container input:focus {
+  color: #ffffff !important;
+}
+
+/* PLACEHOLDER */
 .access-container input::placeholder {
-  opacity: 0.4;
-  color: #aaa;
+  color: rgba(255,255,255,0.4);
 }
 
+/* BUTTON */
 .access-container button {
-  padding: 14px 22px;
+  padding: 16px;
+  width: 100%;
+  background: #ffffff;
+  color: #000;
   border: none;
-  background: white;
-  color: black;
   cursor: pointer;
   letter-spacing: 1px;
   transition: opacity 0.2s ease;
-  width: 100%;
 }
 
 .access-container button:hover {
   opacity: 0.8;
 }
 
+/* NOTE */
 .access-note {
-  margin-top: 12px;
+  margin-top: 14px;
   font-size: 12px;
   opacity: 0.5;
-  color: #ccc;
 }
 </style>
 
 <script>
 function goToStep2() {
   const input = document.querySelector('input[name="intent"]');
-  
-  if (input.value.trim() === "") {
+
+  if (!input.value.trim()) {
     input.focus();
     return;
   }
 
   document.getElementById("step1").style.display = "none";
-document.getElementById("step2").style.display = "block";
-document.getElementById("step2").style.opacity = 0;
-setTimeout(() => {
-  document.getElementById("step2").style.transition = "opacity 0.4s ease";
-  document.getElementById("step2").style.opacity = 1;
-}, 50);
+  document.getElementById("step2").style.display = "block";
 }
 </script>
