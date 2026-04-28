@@ -4,7 +4,16 @@
   <div class="access-container">
     
     <form action="https://formspree.io/f/mvzdjqvv" method="POST">
-      
+
+      <!-- QUESTION (FILTER) -->
+      <input 
+        type="text" 
+        name="intent" 
+        placeholder="What are you no longer willing to continue?" 
+        required
+      />
+
+      <!-- EMAIL -->
       <input 
         type="email" 
         name="email" 
@@ -12,6 +21,10 @@
         required
       />
 
+      <!-- REDIRECT (MUST BE INSIDE FORM) -->
+      <input type="hidden" name="_redirect" value="https://thehumanlab.github.io/thethirddoor/thank-you.html">
+
+      <!-- SUBMIT -->
       <button type="submit">Request Access</button>
 
     </form>
@@ -19,10 +32,12 @@
     <p class="access-note">
       You’ll be contacted if selected.
     </p>
-<input type="hidden" name="_redirect" value="https://thehumanlab.github.io/thethirddoor/thank-you.html">
+
   </div>
 
 </section>
+
+<style>
 /* THE THIRD DOOR — ACCESS MODULE */
 
 .access-section {
@@ -34,18 +49,20 @@
 
 .access-container {
   text-align: center;
+  max-width: 420px;
+  width: 100%;
 }
 
 .access-container form {
   display: flex;
+  flex-direction: column;
+  gap: 12px;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
 }
 
 .access-container input {
   padding: 14px 16px;
-  width: 260px;
+  width: 100%;
   border: 1px solid rgba(0,0,0,0.25);
   background: transparent;
   font-size: 14px;
@@ -65,6 +82,7 @@
   cursor: pointer;
   letter-spacing: 1px;
   transition: opacity 0.2s ease;
+  width: 100%;
 }
 
 .access-container button:hover {
@@ -77,3 +95,4 @@
   opacity: 0.6;
   letter-spacing: 0.5px;
 }
+</style>
